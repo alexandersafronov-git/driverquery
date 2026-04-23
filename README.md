@@ -1,0 +1,20 @@
+Done as part of a test task.
+
+A Python script that will run the "driverquery" utility
+and save the results to a file, and then open this file
+and output only drivers with the "File System " driver type.
+
+Output format similar to original "driverquery" utility.
+
+Requirements: Windows 10, english locale 
+
+Installation
+1) Install Python 3.14 (or above) x64 
+2) Install  MS VSC Build tools
+3) Install dependencies: pip install -r requirements.txt
+   
+Verify installation: 
+  pytest  -s -v
+
+Usage:
+ driverquery.py
