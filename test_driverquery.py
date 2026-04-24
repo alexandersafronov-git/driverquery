@@ -18,12 +18,10 @@ def test_run_driverquery(mock_run):
     mock_result = Mock()
     mock_result.stdout = get_driversquery_stdout().encode('utf-8')
     mock_run.return_value = mock_result  # Set the return value of mock_run
-    # Call the function under test
-    drivers = DriverQuery()
-    # test get_data
-    assert drivers.get_data() == get_driversquery_stdout()
+    # test mock
+    assert DriverQuery().get_data() == get_driversquery_stdout()
     # test command output
+    drivers = DriverQuery()
     output = str(drivers)
-    #print(f"\n {output}")
     assert output == expected_output
 
