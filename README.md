@@ -17,5 +17,7 @@ Verify installation:
   pytest  -s -v
 
 Usage examples:
- driverquery.py
+ 
+driverquery.py
+
  driverquery.py --driver_type="Kernel " --fo TABLE
