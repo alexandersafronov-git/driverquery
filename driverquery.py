@@ -12,6 +12,12 @@ class DriverQuery:
        and then open this file and output only drivers with
        requested driver type ("File System " by default)."""
     def __init__(self, filename='drivers.csv', driver_type='File System '):
+        """ Gets data from "driverquery" and save/load into csv file.
+
+        Args:
+            filename: csv file name, optional.
+            driver_type:  requested driver type for printing, optional "File System " by default.
+        """
         self.filename = filename
         self.driver_type = driver_type
         drivers = self.get_data()
