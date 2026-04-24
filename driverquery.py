@@ -8,6 +8,9 @@ from tabulate import tabulate
 logger = logging.getLogger('driverquery')
 
 class DriverQuery:
+    """Runs "driverquery" utility and save the results to a file,
+       and then open this file and output only drivers with
+       requested driver type ("File System " by default)."""
     def __init__(self, filename='drivers.csv', driver_type='File System '):
         self.filename = filename
         self.driver_type = driver_type
