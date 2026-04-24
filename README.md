@@ -10,7 +10,7 @@ Requirements: Windows 10, english locale
 
 Installation
 1) Install Python 3.14 (or above) x64 
-2) Install  MS Visual Studio Build tools
+2) Install  MS Visual Studio Build tools for C++
 3) Install dependencies: pip install -r requirements.txt
    
 Verify installation: 
