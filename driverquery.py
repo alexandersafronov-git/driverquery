@@ -5,12 +5,15 @@ import pandas as pd
 from tabulate import tabulate
 import argparse
 import csv
+
 logger = logging.getLogger('driverquery')
+
 
 class DriverQuery:
     """Runs "driverquery" utility and save the results to a file,
        and then open this file and output only drivers with
        requested driver type ("File System " by default)."""
+
     def __init__(self, filename='drivers.csv', driver_type='File System ', format_output='TABLE'):
         """ Gets data from "driverquery" and save/load into csv file.
 
@@ -65,9 +68,8 @@ if __name__ == '__main__':
     '''
     parser = argparse.ArgumentParser(description='driverquery', epilog=example_text)
     parser.add_argument('-d', '--driver_type', type=str, help='prints only drivers with certain driver type, '
-                                                        'default "Files System "', default='File System ')
+                                                              'default "Files System "', default='File System ')
     parser.add_argument('-f', '--fo', type=str, help='output format: TABLE (by default) or CSV', default='TABLE')
     args = parser.parse_args()
     drivers = DriverQuery(driver_type=args.driver_type, format_output=args.fo)
     print(drivers)
-
