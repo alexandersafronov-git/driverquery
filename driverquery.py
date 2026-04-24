@@ -7,11 +7,6 @@ from tabulate import tabulate
 
 logger = logging.getLogger('driverquery')
 
-def read_csv(file_path):
-    with open(file_path, mode='r') as file:
-        csv_reader = csv.DictReader(file)
-        return list(csv_reader)
-
 class DriverQuery:
     def __init__(self, filename='drivers.csv', driver_type='File System '):
         self.filename = filename
