@@ -20,4 +20,4 @@ Usage examples:
  
 driverquery.py
 
- driverquery.py --driver_type="Kernel " --fo TABLE
+ driverquery.py --driver_type="Files System " --fo CSV
