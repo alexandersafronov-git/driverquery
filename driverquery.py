@@ -6,6 +6,7 @@ from tabulate import tabulate
 import argparse
 import csv
 
+valid_formats = ["TABLE", "CSV"]
 logger = logging.getLogger('driverquery')
 
 
@@ -71,5 +72,8 @@ if __name__ == '__main__':
                                                               'default "Files System "', default='File System ')
     parser.add_argument('-f', '--fo', type=str, help='output format: TABLE (by default) or CSV', default='TABLE')
     args = parser.parse_args()
-    drivers = DriverQuery(driver_type=args.driver_type, format_output=args.fo)
-    print(drivers)
+    if args.fo in valid_formats:
+        drivers = DriverQuery(driver_type=args.driver_type, format_output=args.fo)
+        print(drivers)
+    else:
+        print(f'Error: unknown output format \"{args.fo}\"')
