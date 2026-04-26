@@ -16,9 +16,10 @@ def test_run_driverquery(mock_run, mock_driverquery):
 @pytest.mark.parametrize("format_output,expected", [("TABLE", "tests/expected_output_table.txt"),
                                                     ("CSV", 'tests/expected_output.csv')])
 def test_driverquery_output(mock_run, mock_driverquery, format_output, expected):
-    # test table format output
+    # test format output
     mock_run.return_value = mock_driverquery
     drivers = DriverQuery(format_output=format_output)
+    # CR remove needed for run on Windows
     assert str(drivers).replace('\r', '') == str(get_driversquery_stdout(expected))
 
 
