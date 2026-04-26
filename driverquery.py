@@ -28,7 +28,6 @@ class DriverQuery:
         self.format_output = format_output
         drivers = self.get_data()
         self.save_data(drivers)
-        self.data = self.load_data()
 
     @staticmethod
     def get_data():
