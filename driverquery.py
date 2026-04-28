@@ -55,7 +55,11 @@ class DriverQuery:
         filtered = subset[subset['Driver Type'] == self.driver_type]
         if self.format_output == 'TABLE':
             # On Windows replace method for NaN doesn't work properly for columns with non-numeric values
-            return str(tabulate(filtered.replace(np.nan, None), headers='keys', showindex=False))
+            res_list = str(tabulate(filtered.replace(np.nan, None), headers='keys', showindex=False)).splitlines()
+            # keep original driverquery header style
+            res_list[1] = res_list[1].replace('-', '=')
+            separator = '\n'
+            return separator.join(res_list)+'\n'
         elif self.format_output == 'CSV':
             return filtered.to_csv(index=False, quoting=csv.QUOTE_ALL)
         else:
